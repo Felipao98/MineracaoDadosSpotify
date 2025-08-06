@@ -9,36 +9,36 @@ Este projeto utiliza a API do Spotify para coletar dados sobre as faixas de um a
 2.  Busca por um artista específico (neste caso, Taylor Swift).
 3.  Coleta todos os seus álbuns e respectivas faixas.
 4.  Extrai as *features* de áudio de cada faixa (como `danceability`, `energy`, `valence`, `acousticness`).
-5.  Estrutura os dados em um DataFrame do Pandas e os salva em um arquivo CSV para futuras análises.
+5.  Estrutura os dados em uma lista de dicionários e exibe os resultados diretamente no console.
 
 ## 🛠️ Principais Técnicas e Ferramentas
 
 * **Linguagem:** Python
 * **Bibliotecas:**
     * **API:** Spotipy (Wrapper Python para a API do Spotify)
-    * **Manipulação de Dados:** Pandas
 * **Conceitos:**
     * Consumo de APIs REST
-    * Coleta e Extração de Dados (Web Scraping)
+    * Coleta e Extração de Dados
     * Engenharia de Features
-    * Estruturação de Dados
+    * Estruturação de Dados (em listas e dicionários)
 
 ## 🚀 Como Executar o Projeto
 
 ### 1. Pré-requisitos
 
 * Python 3.8 ou superior
-* Credenciais de desenvolvedor para a API do Spotify ([link para o dashboard](https://developer.spotify.com/dashboard))
+* Credenciais de desenvolvedor para a API do Spotify ([link para o dashboard](https://developer.spotify.com/dashboard/))
 
 ### 2. Instalação
 
+O único pré-requisito principal é a biblioteca Spotipy:
 ```bash
-pip install spotipy pandas
+pip install spotipy
 ```
 
 ### 3. Configuração
 
-No script `mineracaoSpotify.py`, insira suas credenciais da API nas variáveis de ambiente ou diretamente no código:
+No script `mineracaoSpotify.py`, insira suas credenciais da API diretamente no código:
 ```python
 # Configure suas credenciais
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="SEU_CLIENT_ID",
@@ -47,16 +47,31 @@ sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="SEU_CLIENT
 
 ### 4. Execução
 
-Execute o script Python. Ele irá gerar um arquivo `spotify_audio_features.csv` no mesmo diretório.
+Execute o script Python. A saída será impressa no terminal (console).
 ```bash
 python mineracaoSpotify.py
 ```
 
 ## 📈 Resultados
 
-O resultado final é um dataset estruturado em formato CSV contendo as faixas do artista e suas respectivas features de áudio, pronto para ser utilizado em projetos de Machine Learning, como sistemas de recomendação, classificação de gênero musical ou análise de sentimentos.
+O resultado final é uma **saída de dados no console**, contendo uma lista de dicionários onde cada dicionário representa uma faixa do artista com suas respectivas features de áudio. Este formato de saída pode ser facilmente redirecionado para um arquivo (`.json`, `.txt`) ou copiado para ser utilizado em outros scripts e ferramentas de análise, como Jupyter Notebooks, para projetos de Machine Learning.
+
+A estrutura de cada dicionário na saída é a seguinte:
+
+| Chave | Descrição | Exemplo |
+| :--- | :--- | :--- |
+| `nome_faixa` | Nome da música. | "Cruel Summer" |
+| `artista` | Nome do artista principal. | "Taylor Swift" |
+| `album` | Nome do álbum de origem. | "Lover" |
+| `id_faixa` | ID único da faixa no Spotify. | "1BxfuPKGuaTgP7aM0Bbdwr" |
+| `danceability`| Nível de "dançabilidade" da música (0.0 a 1.0). | 0.552 |
+| `energy` | Nível de energia da música (0.0 a 1.0). | 0.702 |
+| `valence` | A positividade musical da faixa (0.0 a 1.0). | 0.564 |
+| `...` | *...outras features de áudio...* | ... |
+
 
 ## 👤 Autor
 
 * **[Seu Nome Completo]**
 * **LinkedIn:** [link para o seu LinkedIn]
+* **GitHub:** [link para o seu GitHub]
