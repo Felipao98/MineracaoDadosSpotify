@@ -72,6 +72,6 @@ A estrutura de cada dicionário na saída é a seguinte:
 
 ## 👤 Autor
 
-* **[Seu Nome Completo]**
-* **LinkedIn:** [link para o seu LinkedIn]
-* **GitHub:** [link para o seu GitHub]
+* **[Luis Felipe Marques Silva]**
+* **LinkedIn:** [www.linkedin.com/in/luisfelipemsilva]
+* **GitHub:** [[link para o seu GitHub](https://github.com/Felipao98)]
