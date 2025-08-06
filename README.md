@@ -74,4 +74,4 @@ A estrutura de cada dicionário na saída é a seguinte:
 
 * **[Luis Felipe Marques Silva]**
 * **LinkedIn:** [www.linkedin.com/in/luisfelipemsilva]
-* **GitHub:** [[link para o seu GitHub](https://github.com/Felipao98)]
+* **GitHub:** [https://github.com/Felipao98]
